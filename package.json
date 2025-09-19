@@ -2,9 +2,9 @@
   "name": "premium-discord-music-bot",
   "version": "3.0.0",
   "description": "Premium Discord Music Bot with Advanced Features",
-  "main": "simple-predictive-bot.js",
+  "main": "working-bot.js",
   "scripts": {
-    "start": "node simple-predictive-bot.js",
+    "start": "node working-bot.js",
     "dev": "nodemon simple-predictive-bot.js",
     "test": "node test-bot.js",
     "music": "node ai-music-bot.js",
