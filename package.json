@@ -2,12 +2,14 @@
   "name": "premium-discord-music-bot",
   "version": "3.0.0",
   "description": "Premium Discord Music Bot with Advanced Features",
-  "main": "predictive-analytics-bot.js",
+  "main": "simple-predictive-bot.js",
   "scripts": {
-    "start": "node predictive-analytics-bot.js",
-    "dev": "nodemon predictive-analytics-bot.js",
+    "start": "node simple-predictive-bot.js",
+    "dev": "nodemon simple-predictive-bot.js",
     "test": "node test-bot.js",
-    "music": "node ai-music-bot.js"
+    "music": "node ai-music-bot.js",
+    "full": "node predictive-analytics-bot.js",
+    "diagnostic": "node diagnostic-bot.js"
   },
   "dependencies": {
     "@discordjs/rest": "^2.2.0",
