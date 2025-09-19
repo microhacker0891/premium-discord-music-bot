@@ -105,6 +105,9 @@ class PredictiveAnalyticsBot {
                 case 'news':
                     await this.handleNewsCommand(interaction);
                     break;
+                case 'ping':
+                    await this.handlePingCommand(interaction);
+                    break;
             }
         } catch (error) {
             this.logger.error(`Error handling interaction: ${error.message}`);
@@ -533,6 +536,16 @@ class PredictiveAnalyticsBot {
         }
     }
 
+    async handlePingCommand(interaction) {
+        const embed = new EmbedBuilder()
+            .setTitle('🏓 Pong!')
+            .setDescription(`**Latency:** ${Date.now() - interaction.createdTimestamp}ms\n**API Latency:** ${Math.round(this.client.ws.ping)}ms`)
+            .setColor(0x00ff00)
+            .setTimestamp();
+
+        await interaction.reply({ embeds: [embed] });
+    }
+
     // ========================================
     // BACKGROUND TASKS
     // ========================================
@@ -640,7 +653,11 @@ class PredictiveAnalyticsBot {
 
             new SlashCommandBuilder()
                 .setName('news')
-                .setDescription('Get latest market news with sentiment analysis')
+                .setDescription('Get latest market news with sentiment analysis'),
+
+            new SlashCommandBuilder()
+                .setName('ping')
+                .setDescription('Check bot latency and status')
         ];
 
         try {
@@ -649,16 +666,20 @@ class PredictiveAnalyticsBot {
 
             const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
-            this.logger.info('Started refreshing application (/) commands.');
+            this.logger.info(`Started refreshing ${commands.length} application (/) commands.`);
+
+            const commandData = commands.map(command => command.toJSON());
+            this.logger.info('Command data prepared:', JSON.stringify(commandData, null, 2));
 
             await rest.put(
                 Routes.applicationCommands(this.client.user.id),
-                { body: commands.map(command => command.toJSON()) }
+                { body: commandData }
             );
 
             this.logger.info('Successfully reloaded application (/) commands.');
         } catch (error) {
             this.logger.error(`Error registering commands: ${error.message}`);
+            this.logger.error('Full error:', error);
         }
     }
 
