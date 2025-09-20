@@ -1,0 +1,17 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#3B82F6" stroke="#1E40AF" stroke-width="4"/>
+  
+  <!-- Chart bars -->
+  <rect x="32" y="80" width="8" height="24" fill="white" rx="2"/>
+  <rect x="44" y="70" width="8" height="34" fill="white" rx="2"/>
+  <rect x="56" y="60" width="8" height="44" fill="white" rx="2"/>
+  <rect x="68" y="50" width="8" height="54" fill="white" rx="2"/>
+  <rect x="80" y="75" width="8" height="29" fill="white" rx="2"/>
+  
+  <!-- Momentum arrow -->
+  <path d="M64 20 L72 28 L68 28 L68 36 L60 36 L60 28 L56 28 Z" fill="white"/>
+  
+  <!-- Alpha symbol -->
+  <text x="64" y="100" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">α</text>
+</svg>

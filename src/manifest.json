@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "StarkGlass — Momentum & Alpha Overlay",
+  "version": "1.0.0",
+  "description": "Adaptive overlay with confluence, momentum nowcast, and targets on web trading platforms.",
+  "action": {
+    "default_title": "StarkGlass",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://kite.zerodha.com/*",
+    "https://*.tradingview.com/*",
+    "https://*.upstox.com/*",
+    "https://finance.yahoo.com/*",
+    "https://api.kite.trade/*",
+    "https://api.upstox.com/*",
+    "https://api.polygon.io/*",
+    "https://api.tiingo.com/*",
+    "https://finnhub.io/api/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://kite.zerodha.com/*",
+        "https://*.tradingview.com/*",
+        "https://*.upstox.com/*",
+        "https://finance.yahoo.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*",
+        "icons/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

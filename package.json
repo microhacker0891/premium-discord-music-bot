@@ -1,0 +1,31 @@
+{
+  "name": "premium-discord-music-bot",
+  "version": "1.0.0",
+  "description": "A premium Discord music bot with advanced features",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "deploy": "node src/deploy-commands.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["discord", "bot", "music", "youtube", "spotify"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "@discordjs/voice": "^0.16.1",
+    "youtube-dl-exec": "^2.4.13",
+    "ytdl-core": "^4.11.5",
+    "play-dl": "^1.9.7",
+    "spotify-web-api-node": "^5.0.2",
+    "lyrics-finder": "^21.7.0",
+    "dotenv": "^16.3.1",
+    "node-cron": "^3.0.3",
+    "winston": "^3.11.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
