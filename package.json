@@ -1,0 +1,1 @@
+{"name":"pegasus-music-bot","version":"1.0.0","description":"Simple Discord Music Bot","main":"bot.js","scripts":{"start":"node bot.js","dev":"node --watch bot.js"},"keywords":["discord","bot","music"],"author":"Pegasus","license":"MIT","dependencies":{"discord.js":"^14.14.1","@discordjs/voice":"^0.16.1","play-dl":"^1.9.7","ytdl-core":"^4.11.5"},"engines":{"node":">=16.0.0"}}
