@@ -1,7 +1,7 @@
 {
   "name": "premium-discord-music-bot",
-  "version": "1.0.0",
-  "description": "A premium Discord music bot with advanced features",
+  "version": "2.0.0",
+  "description": "Premium Discord Music Bot with Slash Commands and Advanced Features",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -10,8 +10,8 @@
     "deploy": "node src/deploy-commands.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["discord", "bot", "music", "youtube", "spotify"],
-  "author": "Your Name",
+  "keywords": ["discord", "bot", "music", "youtube", "spotify", "slash-commands"],
+  "author": "Pegasus Bot Team",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.14.1",
@@ -27,5 +27,9 @@
   },
   "engines": {
     "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microhacker0891/premium-discord-music-bot"
   }
 }
